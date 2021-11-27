@@ -38,82 +38,100 @@ const BaseLayout = () => {
 		<Box sx={{ flexGrow: 1, m: 2 }}>
 			<Grid container spacing={1}>
 				<Grid item xs={2}>
-					<SideBar>Hello</SideBar>
+					<SideBar sx={{ backgroundColor: "transparent" }}>
+						Hello
+					</SideBar>
 				</Grid>
 				<Grid item xs={10}>
 					<Grid container spacing={1}>
 						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
+							<StatuItem sx={{ backgroundColor: "transparent" }}>xl=8</StatuItem>
 						</Grid>
 						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
+							<StatuItem sx={{ backgroundColor: "transparent" }}>xl=8</StatuItem>
 						</Grid>
 						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
+							<StatuItem sx={{ backgroundColor: "transparent" }}>xl=8</StatuItem>
 						</Grid>
 						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
+							<StatuItem sx={{ backgroundColor: "transparent" }}>xl=8</StatuItem>
 						</Grid>
 						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
+							<StatuItem sx={{ backgroundColor: "transparent" }}>xl=8</StatuItem>
 						</Grid>
 						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
+							<StatuItem sx={{ backgroundColor: "transparent" }}>xl=8</StatuItem>
 						</Grid>
 
 						<Grid item md={4} lg={3} xl={4}>
-							<Item>xl=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xl=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xl={4}>
-							<Item>xl=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xl=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xl={4}>
-							<Item>xl=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xl=8</Item>
 						</Grid>
 
 						<Grid item md={4} lg={3} xs={6}>
-							<Item>
-								<Button variant="contained" color="primary">
+							<Item sx={{ backgroundColor: "transparent" }}>
+								<Button
+									variant="contained"
+									color="secondary"
+									size="small"
+								>
 									Contained
 								</Button>
-								<Button variant="outlined" color="primary">
+								<Button
+									variant="outlined"
+									color="secondary"
+									size="small"
+								>
 									Contained
 								</Button>
 							</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={6}>
-							<Item>
-								<Button variant="contained" color="secondary">
+							<Item sx={{ backgroundColor: "transparent" }}>
+								<Button
+									variant="contained"
+									color="secondary"
+									size="small"
+								>
 									Contained
 								</Button>
-								<Button variant="outlined" color="secondary">
+								<Button
+									variant="outlined"
+									color="secondary"
+									size="small"
+								>
 									Contained
 								</Button>
 							</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
+							<Item sx={{ backgroundColor: "transparent" }}>xs=8</Item>
 						</Grid>
 					</Grid>
 				</Grid>

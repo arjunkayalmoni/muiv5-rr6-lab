@@ -1,7 +1,7 @@
 import BasicGrid from "./components/layouts/GridLayout";
 import MuiAppBar from "./components/layouts/Navbar";
-import Checkbox from '@mui/material/Checkbox';
-import { blue, green, orange, purple } from '@mui/material/colors';
+import Checkbox from "@mui/material/Checkbox";
+import { blue, green, orange, purple } from "@mui/material/colors";
 import BaseLayout from "./components/layouts/BaseLayout";
 import {
 	createTheme,
@@ -13,33 +13,9 @@ import { CssBaseline, useMediaQuery } from "@mui/material";
 import React from "react";
 
 
-// const darkTheme = createTheme({
-// 	palette: {
-// 		mode: "dark",
-// 	},
-// });
-
-// const theme = createTheme({
-// 	shape: {
-// 		borderRadius: "20px",
-// 	},
-// 	status: {
-// 		danger: orange[500],
-// 	},
-// 	palette: {
-// 		primary: {
-// 			main: "#388CD8",
-// 		},
-// 		secondary: {
-// 			main: "#B63E82",
-// 		},
-// 	},
-// });
-
-function App()
-{
-   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-   const darkThemeDefault = React.useMemo(
+function App() {
+	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+	const darkThemeDefault = React.useMemo(
 		() =>
 			responsiveFontSizes(
 				createTheme({
@@ -63,8 +39,8 @@ function App()
 					palette: {
 						mode: prefersDarkMode ? "dark" : "light",
 						background: {
-							default: "#15202B",
-							paper: "#172430",
+							// default: "#1E1E2E", // "#15202B",
+							// paper: "#27293C", // "#172430",
 							// paper: "#192834",
 							// paper: "#1C2731",
 						},
@@ -84,17 +60,17 @@ function App()
 				})
 			),
 		[prefersDarkMode]
-   );
-  return (
+	);
+	return (
 		<ThemeProvider theme={darkThemeDefault}>
 			<MuiAppBar />
 			<br />
 			<br />
-      <br />
+			<br />
 			<BaseLayout />
 			<CssBaseline />
 		</ThemeProvider>
-  );
+	);
 }
 
 export default App;
