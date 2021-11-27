@@ -22,7 +22,7 @@ const SideBar = styled(Item)(({ theme }) => ({
 	textAlign: "center",
 	color: theme.palette.text.secondary,
 	marginTop: theme.spacing(2),
-	height: "100vh",
+	height: "91vh",
 	// width: 220,
     position: 'static'
 }));

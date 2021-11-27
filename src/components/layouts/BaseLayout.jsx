@@ -19,7 +19,7 @@ const StatuItem = styled(Paper)(({ theme }) => ({
 const Item = styled(Paper)(({ theme }) => ({
 	...theme.typography.body2,
     textAlign: "center",
-    minHeight: theme.spacing(35),
+    minHeight: theme.spacing(30),
     color: theme.palette.text.secondary,
 }));
 
@@ -27,51 +27,51 @@ const SideBar = styled(Paper)(({ theme }) => ({
 	...theme.typography.body2,
 	textAlign: "center",
     color: theme.palette.text.secondary,
-    height: '91vh',
+    height: '90vh',
 	position: 'fixed',
 	zIndex: 1000,
-	width: 270
+	width: "15.5%" // theme.spacing(25)
 }));
 
 const BaseLayout = () => {
 	return (
 		<Box sx={{ flexGrow: 1, m: 2 }}>
-			<Grid container spacing={2}>
+			<Grid container spacing={1}>
 				<Grid item xs={2}>
 					<SideBar>Hello</SideBar>
 				</Grid>
 				<Grid item xs={10}>
-					<Grid container spacing={2}>
-						<Grid item xs={2}>
-							<StatuItem>xs=8</StatuItem>
+					<Grid container spacing={1}>
+						<Grid item md={4} lg={3} xl={2}>
+							<StatuItem>xl=8</StatuItem>
 						</Grid>
-						<Grid item xs={2}>
-							<StatuItem>xs=8</StatuItem>
+						<Grid item md={4} lg={3} xl={2}>
+							<StatuItem>xl=8</StatuItem>
 						</Grid>
-						<Grid item xs={2}>
-							<StatuItem>xs=8</StatuItem>
+						<Grid item md={4} lg={3} xl={2}>
+							<StatuItem>xl=8</StatuItem>
 						</Grid>
-						<Grid item xs={2}>
-							<StatuItem>xs=8</StatuItem>
+						<Grid item md={4} lg={3} xl={2}>
+							<StatuItem>xl=8</StatuItem>
 						</Grid>
-						<Grid item xs={2}>
-							<StatuItem>xs=8</StatuItem>
+						<Grid item md={4} lg={3} xl={2}>
+							<StatuItem>xl=8</StatuItem>
 						</Grid>
-						<Grid item xs={2}>
-							<StatuItem>xs=8</StatuItem>
-						</Grid>
-
-						<Grid item xs={4}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item xs={4}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item xs={4}>
-							<Item>xs=8</Item>
+						<Grid item md={4} lg={3} xl={2}>
+							<StatuItem>xl=8</StatuItem>
 						</Grid>
 
-						<Grid item xs={6}>
+						<Grid item md={4} lg={3} xl={4}>
+							<Item>xl=8</Item>
+						</Grid>
+						<Grid item md={4} lg={3} xl={4}>
+							<Item>xl=8</Item>
+						</Grid>
+						<Grid item md={4} lg={3} xl={4}>
+							<Item>xl=8</Item>
+						</Grid>
+
+						<Grid item md={4} lg={3} xs={6}>
 							<Item>
 								<Button variant="contained" color="primary">
 									Contained
@@ -81,7 +81,7 @@ const BaseLayout = () => {
 								</Button>
 							</Item>
 						</Grid>
-						<Grid item xs={6}>
+						<Grid item md={4} lg={3} xs={6}>
 							<Item>
 								<Button variant="contained" color="secondary">
 									Contained
@@ -91,28 +91,28 @@ const BaseLayout = () => {
 								</Button>
 							</Item>
 						</Grid>
-						<Grid item xs={10}>
+						<Grid item md={4} lg={3} xs={10}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={2}>
+						<Grid item md={4} lg={3} xs={2}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={10}>
+						<Grid item md={4} lg={3} xs={10}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={2}>
+						<Grid item md={4} lg={3} xs={2}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={10}>
+						<Grid item md={4} lg={3} xs={10}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={2}>
+						<Grid item md={4} lg={3} xs={2}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={10}>
+						<Grid item md={4} lg={3} xs={10}>
 							<Item>xs=8</Item>
 						</Grid>
-						<Grid item xs={2}>
+						<Grid item md={4} lg={3} xs={2}>
 							<Item>xs=8</Item>
 						</Grid>
 					</Grid>

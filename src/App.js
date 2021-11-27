@@ -75,9 +75,9 @@ function App()
 							main: "#B63E82",
 						},
 					},
-					// shape: {
-					// 	borderRadius: "20px",
-					// },
+					shape: {
+						borderRadius: "20px",
+					},
 					status: {
 						danger: orange[500],
 					},
