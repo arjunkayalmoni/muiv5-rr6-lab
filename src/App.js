@@ -11,6 +11,8 @@ import {
 } from "@mui/material/styles";
 import { CssBaseline, useMediaQuery } from "@mui/material";
 import React from "react";
+import StyledPaperExample from "./components/StyledPaper";
+import CustomSxTextFields from "./components/TextFields";
 
 
 function App() {
@@ -18,13 +20,20 @@ function App() {
 	const darkThemeDefault = React.useMemo(
 		() =>
 			responsiveFontSizes(
-				createTheme({
+        createTheme({
+          Button: {
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+          },
 					components: {
 						MuiButton: {
 							styleOverrides: {
 								contained: {
 									// background:
 									// 	"linear-gradient(45deg, #388CD8 30%, #7855FF 90%)",
+									// background:
+									// 	"linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
+									// boxShadow:
+									// 	"0 3px 5px 2px rgba(33, 203, 243, .3)",
 									border: 0,
 									// borderRadius: 30,
 									// boxShadow:
@@ -32,7 +41,8 @@ function App() {
 									color: "white",
 									// height: 48,
 									// padding: "0 30px",
-								},
+                },
+
 							},
 						},
 					},
@@ -52,7 +62,7 @@ function App() {
 						},
 					},
 					shape: {
-						borderRadius: "20px",
+						// borderRadius: "20px",
 					},
 					status: {
 						danger: orange[500],
@@ -67,7 +77,9 @@ function App() {
 			<br />
 			<br />
 			<br />
-			<BaseLayout />
+      <BaseLayout />
+      {/* <StyledPaperExample />
+      <CustomSxTextFields /> */}
 			<CssBaseline />
 		</ThemeProvider>
 	);
