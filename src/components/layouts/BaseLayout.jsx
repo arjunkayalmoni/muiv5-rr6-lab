@@ -1,142 +1,128 @@
 import * as React from "react";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
+import { Dashboard } from "../pages/Dashboard";
+import { About } from "../pages/About";
+import { Profile } from "../pages/Profile";
+import { ErrorPage } from "../pages/ErrorPage";
+import { spacing } from "@mui/material/node_modules/@mui/system";
+import { Stats } from "../pages/Stats";
+import { Contact } from "../pages/Contact";
+import { palette } from "@mui/system";
+import { purple } from "@mui/material/colors";
 
 
-const StatuItem = styled(Paper)(({ theme }) => ({
-	...theme.typography.body2,
-	textAlign: "center",
-	minHeight: theme.spacing(20),
-    color: theme.palette.text.secondary,
-    'display': 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-}));
-
-const Item = styled(Paper)(({ theme }) => ({
-	...theme.typography.body2,
-    textAlign: "center",
-    minHeight: theme.spacing(30),
-    color: theme.palette.text.secondary,
-}));
 
 const SideBar = styled(Paper)(({ theme }) => ({
 	...theme.typography.body2,
 	textAlign: "center",
-    color: theme.palette.text.secondary,
-    height: '90vh',
-	position: 'fixed',
-	zIndex: 1000,
-	width: "15.5%" // theme.spacing(25)
+	color: "#fff",
+	// background: theme.palette.background.sideBar.main,
+	background: "linear-gradient(0deg, #0098f0 0%, #0ecea8 100%)",
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "center",
+	height: "91vh",
+	position: "fixed",
+	padding: 100,
+	width: "15.5%", // theme.spacing(25)
+	// fontSize: "1.5em",
+	textDecoration: "none",
 }));
+
+const links = {
+	listStyle: 'none',
+	linkStyle: 'none',
+	// fontSize: '1.5em'
+}
+
+const activeStyle = {
+	border: '2px solid cyan',
+	padding: "10px",
+	textDecoration: "none"
+}
+
+const boxStyle = { m: 2 }
+
+const navLinks = [
+	{ name: "Dashboard", url: "/", element: <Dashboard /> },
+	{ name: "Stats", url: "stats", element: <Stats /> },
+	{ name: "Contact", url: "contact", element: <Contact /> },
+	{ name: "About", url: "about", element: <About /> },
+];
+
 
 const BaseLayout = () => {
 	return (
-		<Box sx={{ flexGrow: 1, m: 2 }}>
-			<Grid container spacing={1}>
-				<Grid item xs={2}>
-					<SideBar>
-						Hello
-					</SideBar>
-				</Grid>
-				<Grid item xs={10}>
-					<Grid container spacing={1}>
-						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
-						</Grid>
-						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
-						</Grid>
-						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
-						</Grid>
-						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
-						</Grid>
-						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
-						</Grid>
-						<Grid item md={4} lg={3} xl={2}>
-							<StatuItem>xl=8</StatuItem>
-						</Grid>
+		<Router>
+			<Box sx={{ ...boxStyle }}>
+				<Grid container spacing={1}>
+					<Grid item xs={2}>
+						<SideBar className="sideBarGreen">
+							{navLinks.map((link) => (
+								<NavLink
+									component={<Button />}
+									// variant={({ isActive }) =>
+									// 	isActive ? "outlined" : "link"
+									// }
 
-						<Grid item md={4} lg={3} xl={4}>
-							<Item>xl=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xl={4}>
-							<Item>xl=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xl={4}>
-							<Item>xl=8</Item>
-						</Grid>
+									// style={({ isActive }) =>
+									// 	isActive ? activeStyle : undefined
+									// }
+									to={link.url}
+									key={link.name}
+								>
+									{link.name}
+								</NavLink>
+							))}
+							<Link
+								component="button"
+								variant="outlined"
+								onClick={() => {
+									console.info("I'm a button.");
+								}}
+							>
+								Button Link
+							</Link>
+							{/* <NavLink
+								style={({ isActive }) =>
+									isActive ? activeStyle : undefined
+								}
+								to="/profile"
+							>
+								Profile
+							</NavLink> */}
+						</SideBar>
+					</Grid>
+					<Grid item xs={10}>
+						<Routes>
+							{navLinks.map((link) => (
+								<Route
+									path={link.url}
+									element={link.element}
+									key={link.name}
+								/>
+							))}
+							{/* <Route path="/" element={<Dashboard />} />
+							<Route path="about" element={<About />} />
+							<Route path="about" element={<About />} />
+							<Route path="about" element={<About />} /> */}
 
-						<Grid item md={4} lg={3} xs={6}>
-							<Item>
-								<Button
-									variant="contained"
-									color="secondary"
-									size="small"
-								>
-									Contained
-								</Button>
-								<Button
-									variant="outlined"
-									color="secondary"
-									size="small"
-								>
-									Contained
-								</Button>
-							</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={6}>
-							<Item>
-								<Button
-									variant="contained"
-									color="secondary"
-									size="small"
-								>
-									Contained
-								</Button>
-								<Button
-									variant="outlined"
-									color="secondary"
-									size="small"
-								>
-									Contained
-								</Button>
-							</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={10}>
-							<Item>xs=8</Item>
-						</Grid>
-						<Grid item md={4} lg={3} xs={2}>
-							<Item>xs=8</Item>
-						</Grid>
+							<Route
+								path="profile/:username"
+								element={<Profile />}
+							/>
+							<Route path="*" element={<ErrorPage />} />
+						</Routes>
 					</Grid>
 				</Grid>
-			</Grid>
-		</Box>
+			</Box>
+		</Router>
 	);
 };
 
