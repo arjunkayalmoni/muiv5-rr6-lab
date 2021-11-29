@@ -7,12 +7,15 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ThemeContext } from "@mui/styled-engine";
+import { palette } from "@mui/system";
 
 export default function MuiAppBar() {
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+	<>
+		<Box sx={{ flexGrow: 1, mb: 10 }}>
 			{/* <AppBar position="fixed" sx={{ backgroundColor: "transparent" }}> */}
-			<AppBar position="fixed" color="default">
+			{/* <AppBar position="fixed" sx={{ bgcolor: "transparent" }}> */}
+			<AppBar position="fixed" enableColorOnDark={true} color="transparent">
 				<Toolbar>
 					<IconButton
 						size="large"
@@ -33,5 +36,6 @@ export default function MuiAppBar() {
 				</Toolbar>
 			</AppBar>
 		</Box>
+	</>
 	);
 }
