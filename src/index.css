@@ -13,3 +13,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a,
+a:focus,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.sideBarBlue {
+  background: #3358f4;
+  background: -webkit-linear-gradient(0deg, #3358f4 0%, #1d8cf8 100%);
+  background: -o-linear-gradient(0deg, #3358f4 0%, #1d8cf8 100%);
+  background: -moz-linear-gradient(0deg, #3358f4 0%, #1d8cf8 100%);
+  background: linear-gradient(0deg, #3358f4 0%, #1d8cf8 100%);
+}
+
+.sideBarGreen {
+  background: #0098f0;
+  background: -webkit-linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+  background: -o-linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+  background: -moz-linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+  background: linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+}
