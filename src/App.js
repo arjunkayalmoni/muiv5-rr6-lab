@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import BasicGrid from "./components/layouts/GridLayout";
 import MuiAppBar from "./components/layouts/Navbar";
 import Checkbox from "@mui/material/Checkbox";
@@ -10,20 +12,19 @@ import {
 	responsiveFontSizes,
 } from "@mui/material/styles";
 import { CssBaseline, useMediaQuery } from "@mui/material";
-import React from "react";
-import StyledPaperExample from "./components/StyledPaper";
-import CustomSxTextFields from "./components/TextFields";
-
+import { getDesignTokens } from "./components/pages/themes/Theme";
 
 function App() {
 	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-	const darkThemeDefault = React.useMemo(
+	console.log({ prefersDarkMode });
+	const darkThemeDefault = useMemo(
 		() =>
 			responsiveFontSizes(
-        createTheme({
-          Button: {
-            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-          },
+				createTheme({
+					Button: {
+						background:
+							"linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+					},
 					components: {
 						MuiButton: {
 							styleOverrides: {
@@ -41,26 +42,55 @@ function App() {
 									color: "white",
 									// height: 48,
 									// padding: "0 30px",
-                },
-
+								},
 							},
 						},
 					},
-					palette: {
-						mode: prefersDarkMode ? "dark" : "light",
-						background: {
-							// default: "#1E1E2E", // "#15202B",
-							// paper: "#27293C", // "#172430",
-							// paper: "#192834",
-							// paper: "#1C2731",
-						},
-						primary: {
-							main: "#388CD8",
-						},
-						secondary: {
-							main: "#B63E82",
-						},
-					},
+					palette: prefersDarkMode
+						? {
+								mode: "dark",
+								background: {
+									default: "#1E1E2E", // "#15202B",
+									paper: "#27293C", // "#172430",
+									// paper: "#192834",
+									// paper: "#1C2731",
+									sideBar: {
+										main: "#B63E82",
+									},
+								},
+								primary: {
+									main: "#388CD8",
+								},
+								secondary: {
+									main: "#B63E82",
+								},
+								// newCustomColors
+								sideBar: {
+									main: "#253152",
+								},
+						  }
+						: {
+								mode: "light",
+								background: {
+									default: "#F5F6FA", // "#F9FAFC", //  "#1E1E2E", // "#15202B",
+									// paper: "#27293C", // "#172430",
+									// paper: "#192834",
+									// paper: "#1C2731",
+									sideBar: {
+										main: "#253152",
+									},
+								},
+								primary: {
+									main: "#388CD8",
+								},
+								secondary: {
+									main: "#B63E82",
+								},
+								// newCustomColors
+								sideBar: {
+									main: "#111827",
+								},
+						  },
 					shape: {
 						// borderRadius: "20px",
 					},
@@ -71,15 +101,11 @@ function App() {
 			),
 		[prefersDarkMode]
 	);
+	console.log(purple);
 	return (
 		<ThemeProvider theme={darkThemeDefault}>
 			<MuiAppBar />
-			<br />
-			<br />
-			<br />
-      <BaseLayout />
-      {/* <StyledPaperExample />
-      <CustomSxTextFields /> */}
+			<BaseLayout />
 			<CssBaseline />
 		</ThemeProvider>
 	);
